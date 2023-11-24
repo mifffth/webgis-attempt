@@ -4,5 +4,5 @@ file_get_contents("http://localhost:8080/geoserver/DIY/ows?service=WFS&version=1
 
  header('Content-type: application/json');
  echo ($wfsUrl);
- # Jika terdapat &maxFeatures=50 pada url wfs geojson, dihapus supaya jumlah feature tidak dibatasi
+ # Jika terdapat &maxFeatures=0 pada url wfs geojson, dihapus supaya jumlah feature tidak dibatasi
  ?>
