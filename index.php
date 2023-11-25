@@ -14,7 +14,6 @@
 
     <link href="https://unsorry.net/assets-date/images/favicon.png" rel="shortcut icon" type="image/png">
 
-
     <style>
         body {
             background-color: #d3ffd3;
@@ -66,18 +65,18 @@
         }
 
         tr:nth-child(even) {
-            background-color: #d3ffd3;
-            /* Light green background color for even rows */
+            background-color: #fff;
+            /* White background color for even rows */
         }
 
         tr:nth-child(odd) {
-            background-color: #d3ffd3;
-            /* Light green background color for odd rows */
+            background-color: #fff;
+            /* White background color for odd rows */
         }
 
         tr:hover {
-            background-color: #fff;
-            /* White background color on hover */
+            background-color: #d3ffd3;
+            /* Light green background color on hover */
         }
     </style>
 </head>
@@ -110,7 +109,7 @@
                 </li>
                 <li class="nav-item">
                     <a id="measureLink" class="nav-link" href="input.php" target="_blank"><i
-                            class="fas fa-leaf"></i>Persebaran</a>
+                            class="fas fa-leaf"></i>Tambah data</a>
                 </li>
                 <li class="nav-item">
                     <a id="measureLink" class="nav-link" href="geoserver.html" target="_blank"><i
@@ -149,26 +148,31 @@
         $sql = "SELECT * FROM responsi";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-            echo "<table>
-                    <tr>
-                        <th>Nama</th>
-                        <th>Latitude</th>
-                        <th>Longitude</th>
-                        <th>Tipe</th>
-                    </tr>";
+            echo "<table class='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th scope='col'>Nomor</th>
+                            <th scope='col'>Nama</th>
+                            <th scope='col'>Latitude</th>
+                            <th scope='col'>Longitude</th>
+                            <th scope='col'>Tipe</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
 
             $row_number = 0;
             while ($row = $result->fetch_assoc()) {
                 $row_number++;
                 $row_class = $row_number % 2 == 0 ? "even-row" : "odd-row";
                 echo "<tr class='$row_class'>
+                        <th scope='row'>" . $row_number . "</th>
                         <td>" . $row["Nama"] . "</td>
                         <td>" . $row["Latitude"] . "</td>
                         <td>" . $row["Longitude"] . "</td>
                         <td>" . $row["Tipe"] . "</td>
                     </tr>";
             }
-            echo "</table>";
+            echo "</tbody></table>";
         } else {
             echo "0 results";
         }
