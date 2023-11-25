@@ -21,5 +21,5 @@ Sumber data yang digunakan berasal dari Geoportal Kabupaten Sleman untuk titik d
 <img src = "assets/img/ss-landing1.jpg" alt = "Landing page" />
 <img src = "assets/img/ss-landing2.jpg" alt = "Landing page" />
 <img src = "assets/img/ss-landing3.jpg" alt = "Landing page" />
-<img src = "assets/img/ss-persebaran.jpg" alt = "Titik persebaran" />
+<img src = "ss-persebaran.jpg" alt = "Titik persebaran" />
 <img src = "assets/img/ss-input.jpg" alt = "Form input" />
