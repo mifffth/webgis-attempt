@@ -114,10 +114,18 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto d-flex">
         <li class="nav-item">
           <a id="measureLink" class="nav-link" href="index.html" target="_blank"><i class="fas fa-leaf"></i>Landing
             Page</a>
+        </li>
+        <li class="nav-item">
+          <a id="measureLink" class="nav-link" href="index.php" target="_blank"><i
+              class="fas fa-leaf"></i>Persebaran</a>
+        </li>
+        <li class="nav-item">
+          <a id="measureLink" class="nav-link" href="input.php" target="_blank"><i
+              class="fas fa-leaf"></i>Input</a>
         </li>
         <ul class="navbar-nav ml-auto">
           <!-- Basemap Dropdown Button -->
@@ -176,11 +184,7 @@
         // Adjust the popup content based on your polygon properties
         var content =
           "Kecamatan: " +
-          feature.properties.kecamatan +
-          "<br>" +
-          "Jumlah Penduduk: " +
-          feature.properties.jumlah +
-          "<br>";
+          feature.properties.kecamatan;
 
         layer.bindPopup(content);
       },
